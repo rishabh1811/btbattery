@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&family=Pattaya&family=Sen&display=swap");
+
+/* font-family: 'Oleo Script', cursive;
+
+font-family: 'Pattaya', sans-serif;
+
+font-family: 'Sen', sans-serif;
+ */
+
+* {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: "Sen", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.head-container {
+  color: white;
+  width: 100vw;
+  /* min-height: 40vh; */
+  background: rgb(123, 45, 208);
+  background: linear-gradient(
+    180deg,
+    rgba(123, 45, 208, 0.9612978980654762) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  padding: 0.8rem 3%;
+}
+.navbar img {
+  max-width: 2.5rem;
+}
+.navbar h1 {
+  color: white;
+  font-size: 2.5rem;
+  display: inline-block;
+}
+.navbar h1 span{
+    font-family: 'Pattaya', sans-serif;
+    font-weight: 100;
+    font-size: 2.8rem;
+    padding-right: 1rem;
+  }
+.navbar {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .navbar-logos img {
+  margin: 0 0.8rem 0;
+  color: white;
+}
+
+/*                          * media queries */
+@media (min-width: 680px) {
+  .all-brands-logo {
+    gap: 4rem;
+  }
+  .all-brands-logo img {
+    max-width: 8rem;
+  }
+  .more-button {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 1012px) {
+  .features {
+    text-align: center;
+    padding: 5% 7%;
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+  }
+}
+
+/* ************ Product Page CSS **********/
+
+.product-title{
+    padding: 5% 10% 2%;
+
+}
+.product-title p{
+    font-size: 2.5rem;
+}
+
+.product-image-container {
+  text-align: center;
+  margin-top: 5rem;
+  
+}
+
+.product-price {
+padding: 0 10% ;
+}
+.product-price .price{
+    font-size: 1.8rem;
+}
+.product-price .price span{
+    font-size: 3rem;
+}
+.product-price .mrp{
+    font-size: 1.8rem;
+}
+.product-price .mrp span{
+    text-decoration: line-through;
+
+}
+
+.buy-now{
+    width: 26rem;
+    display: block;
+    margin:2.5rem auto;
+    height: 5.7rem;
+    border-radius: 12px;
+    
+}
+
+.add-to-cart{
+    width: 19rem;
+    display: block;
+    margin:0 auto 2.5rem;
+    height: 5.7rem;
+    border-radius: 12px;
+}
+.need-help , 
+.free-delivery , 
+.warranty {
+ padding: 3% 10%;
+}
+.need-help .title , 
+.free-delivery .title , 
+.warranty .title{
+    font-size: 2rem;
+    
+}
+
+.need-help .content , .free-delivery .content , .warranty .content{
+    font-size: 1.7rem;
+    color: #636363;
+    
+}
+
+
+/* todo media query at min-width 820 to flex image and price &title */
