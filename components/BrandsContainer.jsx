@@ -9,15 +9,15 @@ export default function BrandsContainer() {
             <div className="flex flex-wrap justify-around gap-8 laptop:gap-16 px-5 tablet:px-20 ">
 
                 
-                <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/apple.png"  /></a></Link>
+                <Link href="/brands/apple" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/apple.png"  /></a></Link>
                 <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/motorola.png"  /></a></Link>
                 <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/huawei.png"  /></a></Link>
                 <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/oppo.png"  /></a></Link>
                 <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/asus.png"  /></a></Link>
-                <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/samsung.png"  /></a></Link>
+                <Link href="/brands/samsung" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/samsung.png"  /></a></Link>
                 <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/lenovo.png"  /></a></Link>
                 <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/vivo.png"  /></a></Link>
-                <Link href="/" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/xiaomi.png"  /></a></Link>
+                <Link href="/brands/mi" ><a><img className="w-16 h-16 tablet:w-20 tablet:h-20"   src="/images/brands/xiaomi.png"  /></a></Link>
 
 
                 <button className="more-button w-24 rounded-xl text-lg bg-red-300">more...</button>
