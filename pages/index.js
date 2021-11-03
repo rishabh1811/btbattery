@@ -6,21 +6,21 @@ import HeadComponent from '../components/HeadContainer'
 
 export default function Home() {
   return (<>
-    
-      <Head>
-        <title>BT Battery </title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+
+    <Head>
+      <title>BT Battery </title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
 
     <HeadComponent />
     <BrandsContainer />
     <FeaturesContainer />
     <FooterContainer />
-        
-        
 
-   
-    
-          
- </>)
+
+
+
+
+
+  </>)
 }

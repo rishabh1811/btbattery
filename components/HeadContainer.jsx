@@ -31,7 +31,7 @@ export default function HeadComponent() {
                 <div className="flex gap-3">
                     <a > <img className="h-6 " src="./images/search.png"  /> </a>
                     <a > <img className="h-6 " src="./images/user.png"  /> </a>
-                    <a > <img className="h-6 " src="./images/shopping-cart.png"  /> </a>
+                    <Link href="/cart" ><a > <img className="h-6 " src="./images/shopping-cart.png"  /> </a></Link>
                 </div>
             </div>
             <div className="flex justify-around items-center px-5 pb-5">

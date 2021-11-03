@@ -2,75 +2,83 @@ import axios from "axios";
 import FooterContainer from "../../components/FooterContainer";
 import HeadComponent from "../../components/HeadContainer";
 import ProductCard from "../../components/ProductCard";
+import commerce from "../../lib/commerce";
 
-export default function Brands({products}) {
-    return (<>
-    
+export default function Brands({ products }) {
+    // console.log(products);
+    return (
+      <>
         <HeadComponent />
         <div>
-            <h1>BrandName</h1>
+          <h1>BrandName</h1>
         </div>
 
-        {/* <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 px-8">
-            
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        </div> */}
-
-
         <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 px-8">
-
-            {products.map((product) => {
-                return <ProductCard 
-                key={product.id}
-                id={product.id}
-                title={product.title} 
-                price={product.price} />
-            })}
-           
+          {products.map((product) => {
+            return (
+                <ProductCard {...product}/>
+            //   <ProductCard
+            //     key={product.id}
+            //     id={product.id}
+            //     title={product.title}
+            //     price={product.price}
+            //   />
+            )
+          })}
         </div>
 
         <FooterContainer />
-   </> )
+      </>
+    );
+
+  return <h1>testing</h1>;
 }
 //& *********** getStaticPaths **********
-export async function getStaticPaths () {
-    const brands = ["apple" , "mi" , "samsung"]
+export async function getStaticPaths() {
+  const { data: categories } = await commerce.categories.list();
 
-    const myPaths =  brands.map((brand) => {
-          return {
-              params : {brand : brand}
-          }
-      })
-      
-
+  const paths = categories.map((category) => {
     return {
-        paths: myPaths,
-        fallback: false
-    }
-}
+      params: { brand: category.slug },
+    };
+  });
+//   console.log(paths);
 
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
 //& *********** getStaticProps **********
-export const getStaticProps = async ({params}) => {
-    const brand = params.brand;
-    
-    const response = await axios.get("http://localhost:1337/products");
-    const data = await response.data;
-
-    const products = data.filter((item) => item.brand === brand)
-    
+export const getStaticProps = async ({ params }) => {
 
 
+    const categorySlug = params.brand
 
-    return {
-        props: {
-            products,
-        }
-    }
-}
+  const { data: products } = await commerce.products.list({
+    category_slug: [categorySlug],
+  });
+  
+
+  return {
+    props: {
+      products,
+    },
+  };
+};
+
+// export const getStaticProps = async ({ params }) => {
+//   const brand = params.brand;
+
+//   const response = await axios.get("http://localhost:1337/products");
+//   const data = await response.data;
+
+//   const products = data.filter((item) => item.brand === brand);
+
+//   return {
+//     props: {
+//       products,
+//     },
+//   };
+// };
