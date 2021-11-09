@@ -6,7 +6,7 @@ import ProductCard from "../../components/ProductCard";
 import commerce from "../../lib/commerce";
 
 export default function Brands({ products }) {
-    // console.log(products);
+   // console.log(products);
     return (
       <>
         {/* <HeadComponent /> */}
@@ -17,12 +17,6 @@ export default function Brands({ products }) {
           {products.map((product) => {
             return (
                 <ProductCard {...product}/>
-            //   <ProductCard
-            //     key={product.id}
-            //     id={product.id}
-            //     title={product.title}
-            //     price={product.price}
-            //   />
             )
           })}
         </div>
@@ -59,6 +53,7 @@ export const getStaticProps = async ({ params }) => {
   const { data: products } = await commerce.products.list({
     category_slug: [categorySlug],
   });
+  
   
 
   return {

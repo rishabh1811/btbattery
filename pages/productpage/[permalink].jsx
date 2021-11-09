@@ -34,6 +34,7 @@ export async function getStaticProps({ params }) {
     type: "permalink",
   });
 
+
   return {
     props: {
       product,
@@ -97,7 +98,10 @@ export default function Productpage({ product }) {
         <Navbar />
         <div className="flex justify-around items-center px-5 py-5">
           <div className="image">
-            <img src="https://picsum.photos/seed/picsum/200/300" />
+            <img 
+            // src="https://picsum.photos/seed/picsum/200/300" />
+            className="max-w-[50vw] max-h-[400px]"
+            src={product.image ? product.image.url :"https://picsum.photos/seed/picsum/200/300"} />
           </div>
         </div>
 

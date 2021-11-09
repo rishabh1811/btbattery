@@ -1,14 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-export default function ProductCard({id , name , price , permalink}) {
+export default function ProductCard({id , name , price , permalink , image}) {
   return (
     <div className=" card border-2 pt-8 pr-0 pl-0 pb-4">
       <Link href={`/productpage/${permalink}`}>
         <a>
           <img
-            className="m-auto "
-            src="https://picsum.photos/seed/picsum/200/300"
+            className="m-auto h-[200px]"
+            // src="https://picsum.photos/seed/picsum/200/300"
+            src={image? image.url : "https://picsum.photos/seed/picsum/200/300"}
           />
         </a>
       </Link>
