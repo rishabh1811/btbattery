@@ -1,6 +1,7 @@
 import axios from "axios";
 import FooterContainer from "../../components/FooterContainer";
 import HeadComponent from "../../components/HeadContainer";
+import Navbar from "../../components/Navbar";
 import ProductCard from "../../components/ProductCard";
 import commerce from "../../lib/commerce";
 
@@ -8,10 +9,9 @@ export default function Brands({ products }) {
     // console.log(products);
     return (
       <>
-        <HeadComponent />
-        <div>
-          <h1>BrandName</h1>
-        </div>
+        {/* <HeadComponent /> */}
+        <Navbar />
+       
 
         <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 px-8">
           {products.map((product) => {

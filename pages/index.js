@@ -3,6 +3,8 @@ import BrandsContainer from '../components/BrandsContainer'
 import FeaturesContainer from '../components/FeaturesContainer'
 import FooterContainer from '../components/FooterContainer'
 import HeadComponent from '../components/HeadContainer'
+import Jumbotron from '../components/Jumbotron'
+import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (<>
@@ -12,7 +14,9 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <HeadComponent />
+    {/* <HeadComponent /> */}
+    <Navbar />
+    <Jumbotron />
     <BrandsContainer />
     <FeaturesContainer />
     <FooterContainer />

@@ -3,62 +3,57 @@ import commerce from "../lib/commerce";
 import { payNow } from "../lib/razorpay";
 
 export default function Checkoutformv2({ email }) {
-    const submitHandler = async (e) => {
-        e.preventDefault();
-        const name = e.currentTarget.name.value;
-        const email = e.currentTarget.email.value;
-        const phone = e.currentTarget.phone.value;
-        const address = e.currentTarget.address.value;
-        const addressLine1 = e.currentTarget.addressLine1.value;
-        const city = e.currentTarget.city.value;
-        const state = e.currentTarget.state.value;
-        const country = e.currentTarget.country.value;
-    
-        const cart = await commerce.cart.retrieve();
-        const amount = (await cart.subtotal.raw) * 100;
-        console.log(cart);
-        console.log(amount);
-    
-        const checkoutForm = {
-          name,
-          email,
-          phone,
-          address,
-          addressLine1,
-          city,
-          state,
-          country,
-          cart,
-        };
-    
-        try {
-          const { data: orderInfo } = await axios.post("/api/generateorderid", {
-            amount,
-          });
-          const { id: orderId } = await orderInfo;
-    
-        //   console.log(orderInfo);
-        //   console.log(orderId);
-    
-           payNow(amount, orderId ,checkoutForm);
-        } catch (error) {
-          console.log(error);
-        }
-      };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const name = e.currentTarget.name.value;
+    const email = e.currentTarget.email.value;
+    const phone = e.currentTarget.phone.value;
+    const address = e.currentTarget.address.value;
+    const addressLine1 = e.currentTarget.addressLine1.value;
+    const city = e.currentTarget.city.value;
+    const state = e.currentTarget.state.value;
+    const country = e.currentTarget.country.value;
+
+    const cart = await commerce.cart.retrieve();
+    const amount = (await cart.subtotal.raw) * 100;
+    console.log(cart);
+    console.log(amount);
+
+    const checkoutForm = {
+      name,
+      email,
+      phone,
+      address,
+      addressLine1,
+      city,
+      state,
+      country,
+      cart,
+    };
+
+    try {
+      const { data: orderInfo } = await axios.post("/api/generateorderid", {
+        amount,
+      });
+      const { id: orderId } = await orderInfo;
+
+      //   console.log(orderInfo);
+      //   console.log(orderId);
+
+      payNow(amount, orderId, checkoutForm);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
-<h1>CheckoutForm</h1>
-      <p>{email}</p>
-
-
-      <div class="flex flex-col max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10 m-auto mt-4">
+      <div class="flex flex-col max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10 m-auto mt-4 border">
         <div class="self-center mb-2 text-xl font-light text-gray-800 sm:text-2xl dark:text-white">
           Enter Shipping Details
         </div>
 
         <div class="p-6 mt-8">
-
           <form onSubmit={submitHandler}>
             <div class="flex flex-col gap-4 mb-2">
               <div>

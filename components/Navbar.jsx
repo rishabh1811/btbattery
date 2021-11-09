@@ -1,15 +1,21 @@
 import React from "react";
-import Link from 'next/link'
-
+import Link from "next/link";
+import Head from "next/head";
 
 export default function Navbar() {
   return (
     <>
-      <div className="navbar flex justify-between px-5 py-2 items-baseline ">
+      <Head>
+        <link
+          href="https://cdn.lineicons.com/3.0/lineicons.css"
+          rel="stylesheet"
+        />
+      </Head>
+      <div className="navbar flex justify-between px-5 py-2 items-baseline bg-[rgb(123,45,208)] shadow-md">
         <div className="navbar-brand">
           <Link href="/" passHref>
             <a>
-              <h1 className="text-3xl font-semibold ">
+              <h1 className="text-3xl font-semibold text-white">
                 <span className="pr-2">BT</span>Battery
               </h1>
             </a>
@@ -17,17 +23,11 @@ export default function Navbar() {
         </div>
         <div className="flex gap-3">
           <a>
-            {" "}
-            <img className="h-6 " src="./images/search.png" />{" "}
+            <i className="lni lni-user text-white text-2xl"></i>
           </a>
-          <a>
-            {" "}
-            <img className="h-6 " src="./images/user.png" />{" "}
-          </a>
-          <Link href="/">
+          <Link href="/cart2">
             <a>
-              {" "}
-              <img className="h-6 " src="./images/shopping-cart.png" />{" "}
+              <i className="lni lni-cart text-white text-2xl"></i>
             </a>
           </Link>
         </div>

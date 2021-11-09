@@ -1,7 +1,8 @@
 import Addtocartbutton from "../../components/AddToCartButton";
 import FooterContainer from "../../components/FooterContainer";
 import commerce from "../../lib/commerce";
-import Link from 'next/link'
+import Link from "next/link";
+import Navbar from "../../components/Navbar";
 
 //& ************ getStaticPaths  ************
 export const getStaticPaths = async () => {
@@ -60,15 +61,15 @@ export default function Productpage({ product }) {
   //* ***** RETURN ******
   return (
     <>
-      <div className="head-container">
+      {/* <div className="head-container">
         <div className="navbar flex justify-between px-5 py-2 items-baseline ">
           <div className="navbar-brand">
             <Link href="/">
-                <a>
-                  <h1 className="text-3xl font-semibold ">
-                    <span className="pr-2">BT</span>Battery
-                  </h1>
-                </a>
+              <a>
+                <h1 className="text-3xl font-semibold ">
+                  <span className="pr-2">BT</span>Battery
+                </h1>
+              </a>
             </Link>
           </div>
           <div className="flex gap-3">
@@ -79,9 +80,9 @@ export default function Productpage({ product }) {
               <img className="h-6 " src="/images/user.png" />
             </a>
             <Link href="/cart">
-                <a>
-                  <img className="h-6 " src="/images/shopping-cart.png" />
-                </a>
+              <a>
+                <img className="h-6 " src="/images/shopping-cart.png" />
+              </a>
             </Link>
           </div>
         </div>
@@ -91,7 +92,16 @@ export default function Productpage({ product }) {
             <img src="https://picsum.photos/seed/picsum/200/300" />
           </div>
         </div>
-      </div>
+      </div> */}
+
+        <Navbar />
+        <div className="flex justify-around items-center px-5 py-5">
+          <div className="image">
+            <img src="https://picsum.photos/seed/picsum/200/300" />
+          </div>
+        </div>
+
+
 
       <div className="px-12">
         <div className="product-title pt-4 pb-2 text-2xl">
