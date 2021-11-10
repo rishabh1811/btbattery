@@ -4,6 +4,9 @@ import commerce from "../../lib/commerce";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 
+import { Box } from "@chakra-ui/layout";
+import { useToast } from "@chakra-ui/toast";
+
 //& ************ getStaticPaths  ************
 export const getStaticPaths = async () => {
   // const response = await axios.get("http://localhost:1337/products") // your fetch function here
@@ -34,7 +37,6 @@ export async function getStaticProps({ params }) {
     type: "permalink",
   });
 
-
   return {
     props: {
       product,
@@ -49,9 +51,20 @@ export async function getStaticProps({ params }) {
 
 //& *********** Main Page ************
 export default function Productpage({ product }) {
+
+  const toast = useToast()
+
   //* addToCartHandler
   function addToCartHandler() {
     commerce.cart.add(product.id, 1).then((response) => console.log(response));
+   
+    toast({
+      position:"top" ,
+      isClosable: true,
+      title: "Added to cart !",
+      status : "success",
+          
+    })
   }
 
   //* buyNowHandler
@@ -95,17 +108,20 @@ export default function Productpage({ product }) {
         </div>
       </div> */}
 
-        <Navbar />
-        <div className="flex justify-around items-center px-5 py-5">
-          <div className="image">
-            <img 
+      <Navbar />
+      <div className="flex justify-around items-center px-5 py-5">
+        <div className="image">
+          <img
             // src="https://picsum.photos/seed/picsum/200/300" />
             className="max-w-[50vw] max-h-[400px]"
-            src={product.image ? product.image.url :"https://picsum.photos/seed/picsum/200/300"} />
-          </div>
+            src={
+              product.image
+                ? product.image.url
+                : "https://picsum.photos/seed/picsum/200/300"
+            }
+          />
         </div>
-
-
+      </div>
 
       <div className="px-12">
         <div className="product-title pt-4 pb-2 text-2xl">
