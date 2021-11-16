@@ -6,7 +6,7 @@ import ProductCard from "../../components/ProductCard";
 import commerce from "../../lib/commerce";
 
 export default function Brands({ products }) {
-   // console.log(products);
+   console.log(products);
     return (
       <>
         {/* <HeadComponent /> */}
@@ -25,7 +25,7 @@ export default function Brands({ products }) {
       </>
     );
 
-  return <h1>testing</h1>;
+
 }
 //& *********** getStaticPaths **********
 export async function getStaticPaths() {

@@ -1,22 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import useSWR from "swr";
 import commerce from '../lib/commerce'
 
 export default function Navbar() {
-  // const [showCart , setShowCart] = useState(false)
-  // const [cartItems , setCartItems] = useState(0)
-  const { data: cart, error } = useSWR("/", () => {
-    return commerce.cart.retrieve();
-  });
+  
 
-  // if(cart && cart.total_items !== 0){
-  //     setCartItems(cart.total_items)
-  //     setShowCart(true)
-  // }
 
-  console.log(cart);
   return (
     <>
       <Head>
@@ -42,12 +32,6 @@ export default function Navbar() {
           <Link href="/cart2">
             <a>
               <i className="lni lni-cart text-white text-2xl"></i>
-              
-              {cart && cart.total_items !== 0 && (
-
-              <span className="bg-pink-800 text-white rounded-full px-1">{cart.total_items}</span>
-              )}
-              
             </a>
           </Link>
         </div>

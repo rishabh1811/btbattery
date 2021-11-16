@@ -3,71 +3,29 @@ import FooterContainer from "../../components/FooterContainer";
 import commerce from "../../lib/commerce";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
-
-import { Box } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
+import { NextSeo, ProductJsonLd } from "next-seo";
 
-//& ************ getStaticPaths  ************
-export const getStaticPaths = async () => {
-  // const response = await axios.get("http://localhost:1337/products") // your fetch function here
-  // const data = await response.data;
-  const { data: products } = await commerce.products.list();
 
-  const definedPaths = products.map((product) => {
-    return {
-      params: {
-        permalink: product.permalink,
-      },
-    };
-  });
 
-  return {
-    paths: definedPaths,
-    fallback: "blocking",
-  };
-};
 
-//& ************ getStaticProps  ************
-
-export async function getStaticProps({ params }) {
-  const permalink = params.permalink;
-  // const response = await axios.get(`http://localhost:1337/products/${product}`)
-  // const data = await response.data;
-  const product = await commerce.products.retrieve(permalink, {
-    type: "permalink",
-  });
-
-  return {
-    props: {
-      product,
-    },
-  };
-}
-
-// export default function Productpage({ product }) {
-//   console.log(product);
-//   return <h1>Product Page</h1>;
-// }
-
-//& *********** Main Page ************
+// *********** Main Page ************
 export default function Productpage({ product }) {
-
-  const toast = useToast()
-
-  //* addToCartHandler
+  const toast = useToast();
+  console.log(product)
+  // addToCartHandler
   function addToCartHandler() {
     commerce.cart.add(product.id, 1).then((response) => console.log(response));
-   
+
     toast({
-      position:"top" ,
+      position: "top",
       isClosable: true,
       title: "Added to cart !",
-      status : "success",
-          
-    })
+      status: "success",
+    });
   }
 
-  //* buyNowHandler
+  // buyNowHandler
   function buyNowHandler() {
     alert("buy now");
   }
@@ -75,38 +33,60 @@ export default function Productpage({ product }) {
   //* ***** RETURN ******
   return (
     <>
-      {/* <div className="head-container">
-        <div className="navbar flex justify-between px-5 py-2 items-baseline ">
-          <div className="navbar-brand">
-            <Link href="/">
-              <a>
-                <h1 className="text-3xl font-semibold ">
-                  <span className="pr-2">BT</span>Battery
-                </h1>
-              </a>
-            </Link>
-          </div>
-          <div className="flex gap-3">
-            <a>
-              <img className="h-6 " src="/images/search.png" />
-            </a>
-            <a>
-              <img className="h-6 " src="/images/user.png" />
-            </a>
-            <Link href="/cart">
-              <a>
-                <img className="h-6 " src="/images/shopping-cart.png" />
-              </a>
-            </Link>
-          </div>
-        </div>
+    
+      {/* SEO Start */}
+      {/* <NextSeo
+        title="Simple Usage Example"
+        description="A short description goes here."
+      /> */}
+        {/* <NextSeo
+      title="Using More of Config"
+      description="This example uses more of the available config options."
+      canonical="https://www.canonical.ie/"
+      openGraph={{
+        url: 'https://www.url.ie/a',
+        title: 'Open Graph Title',
+        description: 'Open Graph Description',
+        images: [
+          {
+            url: 'https://www.example.ie/og-image-01.jpg',
+            width: 800,
+            height: 600,
+            alt: 'Og Image Alt',
+            type: 'image/jpeg',
+          },
+          {
+            url: 'https://www.example.ie/og-image-02.jpg',
+            width: 900,
+            height: 800,
+            alt: 'Og Image Alt Second',
+            type: 'image/jpeg',
+          },
+          { url: 'https://www.example.ie/og-image-03.jpg' },
+          { url: 'https://www.example.ie/og-image-04.jpg' },
+        ],
+        site_name: 'SiteName',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />
+     */}
+     <ProductJsonLd 
+     productName="this is product name kk"
+     />
+      {/* SEO Ends */}
 
-        <div className="flex justify-around items-center px-5 pb-5">
-          <div className="image">
-            <img src="https://picsum.photos/seed/picsum/200/300" />
-          </div>
-        </div>
-      </div> */}
+
+
+
+
+
+
+
+
 
       <Navbar />
       <div className="flex justify-around items-center px-5 py-5">
@@ -186,4 +166,42 @@ export default function Productpage({ product }) {
       </style>
     </>
   );
+}
+
+
+// ************ getStaticPaths  ************
+export const getStaticPaths = async () => {
+  // const response = await axios.get("http://localhost:1337/products") // your fetch function here
+  // const data = await response.data;
+  const { data: products } = await commerce.products.list();
+
+  const definedPaths = products.map((product) => {
+    return {
+      params: {
+        permalink: product.permalink,
+      },
+    };
+  });
+
+  return {
+    paths: definedPaths,
+    fallback: "blocking",
+  };
+};
+
+
+// ************ getStaticProps  ************
+export async function getStaticProps({ params }) {
+  const permalink = params.permalink;
+  // const response = await axios.get(`http://localhost:1337/products/${product}`)
+  // const data = await response.data;
+  const product = await commerce.products.retrieve(permalink, {
+    type: "permalink",
+  });
+
+  return {
+    props: {
+      product,
+    },
+  };
 }

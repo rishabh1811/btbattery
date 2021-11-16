@@ -18,7 +18,7 @@ export default function Checkout() {
 
   return (
     <>
-      <script defer src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <script  src="https://checkout.razorpay.com/v1/checkout.js"></script>
       <Navbar />
       <h1 className="font-bold text-center text-xl mt-4">Checkout</h1>
       {user === null ? <SigninFormv2 /> : <Checkoutformv2 {...user} />}
