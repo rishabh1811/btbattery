@@ -26,9 +26,9 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex gap-3">
-          <a>
+          <Link href="/profile" ><a>
             <i className="lni lni-user text-white text-2xl"></i>
-          </a>
+          </a></Link>
           <Link href="/cart2">
             <a>
               <i className="lni lni-cart text-white text-2xl"></i>

@@ -7,6 +7,8 @@ import { auth } from "../lib/firebase-config";
 import Checkoutformv2 from "../components/CheckoutFormv2";
 import SigninFormv2 from "../components/SigninFormv2";
 import Navbar from "../components/Navbar";
+import Script from 'next/script'
+
 
 export default function Checkout() {
   // const provider = new GoogleAuthProvider();
@@ -18,7 +20,8 @@ export default function Checkout() {
 
   return (
     <>
-      <script  src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="beforeInteractive" />
+      {/* <script  src="https://checkout.razorpay.com/v1/checkout.js"></script> */}
       <Navbar />
       <h1 className="font-bold text-center text-xl mt-4">Checkout</h1>
       {user === null ? <SigninFormv2 /> : <Checkoutformv2 {...user} />}

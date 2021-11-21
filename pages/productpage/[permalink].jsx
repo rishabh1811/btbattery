@@ -33,50 +33,105 @@ export default function Productpage({ product }) {
   //* ***** RETURN ******
   return (
     <>
-    
+
       {/* SEO Start */}
-      {/* <NextSeo
-        title="Simple Usage Example"
-        description="A short description goes here."
-      /> */}
-        {/* <NextSeo
-      title="Using More of Config"
-      description="This example uses more of the available config options."
-      canonical="https://www.canonical.ie/"
+    
+        <NextSeo
+      title={`${product.name} | BT Batteries`} 
+      description={`Premium Li-Polimer ${product.name}. Original mAh cell. 6 months warranty`}  
+      // canonical="https://www.canonical.ie/"
       openGraph={{
-        url: 'https://www.url.ie/a',
-        title: 'Open Graph Title',
-        description: 'Open Graph Description',
+        //url: 'https://www.url.ie/a',
+        title: `${product.name} | BT Batteries`,
+        description: `Premium Li-Polimer ${product.name}. Original mAh cell. 6 months warranty`,
         images: [
-          {
-            url: 'https://www.example.ie/og-image-01.jpg',
-            width: 800,
-            height: 600,
-            alt: 'Og Image Alt',
-            type: 'image/jpeg',
-          },
-          {
-            url: 'https://www.example.ie/og-image-02.jpg',
-            width: 900,
-            height: 800,
-            alt: 'Og Image Alt Second',
-            type: 'image/jpeg',
-          },
-          { url: 'https://www.example.ie/og-image-03.jpg' },
-          { url: 'https://www.example.ie/og-image-04.jpg' },
+          { url: product.image.url },
+          // {
+          //   url: 'https://www.example.ie/og-image-01.jpg',
+          //   width: 800,
+          //   height: 600,
+          //   alt: 'Og Image Alt',
+          //   type: 'image/jpeg',
+          // },
+          // {
+          //   url: 'https://www.example.ie/og-image-02.jpg',
+          //   width: 900,
+          //   height: 800,
+          //   alt: 'Og Image Alt Second',
+          //   type: 'image/jpeg',
+          // },
+          // { url: 'https://www.example.ie/og-image-03.jpg' },
         ],
-        site_name: 'SiteName',
+        site_name: 'BT Battery',
       }}
-      twitter={{
-        handle: '@handle',
-        site: '@site',
-        cardType: 'summary_large_image',
-      }}
+      // twitter={{
+      //   handle: '@handle',
+      //   site: '@site',
+      //   cardType: 'summary_large_image',
+      // }}
     />
-     */}
-     <ProductJsonLd 
-     productName="this is product name kk"
-     />
+    
+     <ProductJsonLd
+      productName= {product.name}
+      images={[
+        product.image.url ,
+        // 'https://example.com/photos/4x3/photo.jpg',
+        // 'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      description={`Premium Li-Polimer ${product.name}. Original mAh cell. 6 months warranty`}
+      brand="BT Batteries"
+      //color="blue"
+      // manufacturerName="Gary Meehan"
+      // manufacturerLogo="https://www.example.com/photos/logo.jpg"
+      // material="steel"
+      slogan="Highest grade battery with 6 Months warranty"
+      // disambiguatingDescription="Executive Anvil, perfect for the business traveller."
+      // releaseDate="2014-02-05T08:00:00+08:00"
+      // productionDate="2015-02-05T08:00:00+08:00"
+      // purchaseDate="2015-02-06T08:00:00+08:00"
+      // award="Best Executive Anvil Award."
+      reviews={[
+        {
+          author: {
+            type: 'Rishabh',
+            name: 'Gupta',
+          },
+          datePublished: '2019-01-06T03:37:40Z',
+          reviewBody:
+            'This is the best aftermarket product! Thanks for such a great product',
+          name: 'So great!!!',
+          reviewRating: {
+            bestRating: '5',
+            ratingValue: '5',
+            worstRating: '1',
+          },
+          publisher: {
+            type: 'Organization',
+            name: 'TwoVit',
+          },
+        },
+      ]}
+      aggregateRating={{
+        ratingValue: '4.8',
+        reviewCount: '89',
+      }}
+      offers={[
+        {
+          price: product.price.raw,
+          priceCurrency: 'INR',
+          priceValidUntil: '2022-11-05',
+          itemCondition: 'https://schema.org/NewCondition',
+          availability: 'https://schema.org/InStock',
+          // url: 'https://www.example.com/executive-anvil',
+          seller: {
+            name: 'BT Battery',
+          },
+        },
+      ]}
+      mpn="925872"
+    />
+
+
       {/* SEO Ends */}
 
 
@@ -87,7 +142,7 @@ export default function Productpage({ product }) {
 
 
 
-
+      {console.log(product)}
       <Navbar />
       <div className="flex justify-around items-center px-5 py-5">
         <div className="image">
