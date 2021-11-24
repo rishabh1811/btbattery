@@ -1,9 +1,9 @@
-import Addtocartbutton from "../../components/AddToCartButton";
+// import Addtocartbutton from "../../components/AddToCartButton";
 import FooterContainer from "../../components/FooterContainer";
 import commerce from "../../lib/commerce";
-import Link from "next/link";
+// import Link from "next/link";
 import Navbar from "../../components/Navbar";
-import { useToast } from "@chakra-ui/toast";
+// import { useToast } from "@chakra-ui/toast";
 import { NextSeo, ProductJsonLd } from "next-seo";
 
 
@@ -11,18 +11,18 @@ import { NextSeo, ProductJsonLd } from "next-seo";
 
 // *********** Main Page ************
 export default function Productpage({ product }) {
-  const toast = useToast();
-  console.log(product)
+  // const toast = useToast();
+  // console.log(product)
   // addToCartHandler
   function addToCartHandler() {
     commerce.cart.add(product.id, 1).then((response) => console.log(response));
 
-    toast({
-      position: "top",
-      isClosable: true,
-      title: "Added to cart !",
-      status: "success",
-    });
+    // toast({
+    //   position: "top",
+    //   isClosable: true,
+    //   title: "Added to cart !",
+    //   status: "success",
+    // });
   }
 
   // buyNowHandler
@@ -148,12 +148,13 @@ export default function Productpage({ product }) {
         <div className="image">
           <img
             // src="https://picsum.photos/seed/picsum/200/300" />
-            className="max-w-[50vw] max-h-[400px]"
+            className="w-[250px] tablet:w-[300px] laptop:w-[400px] max-h-[400px]"
             src={
               product.image
                 ? product.image.url
                 : "https://picsum.photos/seed/picsum/200/300"
             }
+            alt="product-image"
           />
         </div>
       </div>
