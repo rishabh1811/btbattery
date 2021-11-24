@@ -10,7 +10,6 @@
     "@chec/commerce.js": "^2.8.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@next/bundle-analyzer": "^12.0.4",
     "axios": "^0.24.0",
     "cookie": "^0.4.1",
     "firebase": "^9.5.0",
