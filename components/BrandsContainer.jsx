@@ -20,55 +20,55 @@ export default function BrandsContainer() {
 
         <Link href="/brands/apple">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/apple.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/apple.webp" alt=" logo"/>
           </div>
         </Link>
 
         <Link href="/">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/motorola.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/motorola.webp" alt="motorola logo"/>
           </div>
         </Link>
 
         <Link href="/">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/huawei.png" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/huawei.png" alt="huawei logo"/>
           </div>
         </Link>
 
         <Link href="/">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/oppo.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/oppo.webp" alt="oppo logo"/>
           </div>
         </Link>
 
         <Link href="/">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/asus.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/asus.webp" alt="asus logo"/>
           </div>
         </Link>
 
         <Link href="/brands/samsung">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/samsung.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/samsung.webp" alt="samsung logo"/>
           </div>
         </Link>
 
         <Link href="/">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/lenovo.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/lenovo.webp" alt="lenovo logo"/>
           </div>
         </Link>
 
         <Link href="/">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/vivo.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/vivo.webp" alt="vivo logo"/>
           </div>
         </Link>
 
         <Link href="/brands/mi">
           <div className="w-16 h-16 tablet:w-20 tablet:h-20">
-              <Image layout="responsive" width={64} height={64} src="/images/brands/xiaomi.webp" />
+              <Image layout="responsive" width={64} height={64} src="/images/brands/xiaomi.webp" alt="xiaomi mi logo"/>
           </div>
         </Link>
 

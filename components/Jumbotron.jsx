@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Jumbotron(props) {
   return (
     <>
@@ -8,9 +10,9 @@ export default function Jumbotron(props) {
           </p>
           <p className=" text-white ">All mobile phone premium battery</p>
         </div>
-        <div className="image">
-          {/* <img src="https://picsum.photos/seed/picsum/200/300" /> */}
-          <img className="max-w-[80%] m-auto tablet:max-w-[50%]" src="/images/iphone2.webp" alt="iphone 6 battery" />
+        
+        <div className="w-[80vw] m-auto tablet:w-[243px] laptop:w-[20vw]">
+          <Image layout="responsive"  height={860} width={573} src="/images/iphone2.webp" alt="iphone 6 battery" />
         </div>
       </div>
     </>

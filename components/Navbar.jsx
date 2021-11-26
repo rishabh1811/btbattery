@@ -26,11 +26,11 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex gap-3">
-          <Link href="/profile" ><a>
+          <Link href="/profile" ><a aria-label="profile">
             <i className="lni lni-user text-white text-2xl"></i>
           </a></Link>
           <Link href="/cart2">
-            <a>
+            <a aria-label="cart">
               <i className="lni lni-cart text-white text-2xl"></i>
             </a>
           </Link>
