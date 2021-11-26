@@ -1,31 +1,24 @@
-import axios from "axios";
 import FooterContainer from "../../components/FooterContainer";
-import HeadComponent from "../../components/HeadContainer";
 import Navbar from "../../components/Navbar";
 import ProductCard from "../../components/ProductCard";
 import commerce from "../../lib/commerce";
 
 export default function Brands({ products }) {
-   console.log(products);
-    return (
-      <>
-        {/* <HeadComponent /> */}
-        <Navbar />
-       
+  console.log(products);
+  return (
+    <>
+      {/* <HeadComponent /> */}
+      <Navbar />
 
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 px-8">
-          {products.map((product) => {
-            return (
-                <ProductCard {...product}/>
-            )
-          })}
-        </div>
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 px-8">
+        {products.map((product) => {
+          return <ProductCard {...product} />;
+        })}
+      </div>
 
-        <FooterContainer />
-      </>
-    );
-
-
+      <FooterContainer />
+    </>
+  );
 }
 //& *********** getStaticPaths **********
 export async function getStaticPaths() {
@@ -36,7 +29,7 @@ export async function getStaticPaths() {
       params: { brand: category.slug },
     };
   });
-//   console.log(paths);
+  //   console.log(paths);
 
   return {
     paths,
@@ -46,15 +39,11 @@ export async function getStaticPaths() {
 
 //& *********** getStaticProps **********
 export const getStaticProps = async ({ params }) => {
-
-
-    const categorySlug = params.brand
+  const categorySlug = params.brand;
 
   const { data: products } = await commerce.products.list({
     category_slug: [categorySlug],
   });
-  
-  
 
   return {
     props: {
