@@ -1,7 +1,9 @@
 
 ## TODO
 
-~ Add photos in commercejs.com  *70%
-~ SEO description
+~ Add more products in commercejs from oppo vivo etc
 ~ Enhance Product Page
-~ success page
+~ Logout button
+~ Profile page improve
+~ Razorpay Account verify
+~ commerce js production api key

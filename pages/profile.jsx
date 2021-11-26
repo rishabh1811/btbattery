@@ -12,7 +12,7 @@ export default function Profile() {
 
   onAuthStateChanged(auth, (usr) => {
     setUser(usr);
-    //console.log(user)
+    console.log(user)
   });
 
   useEffect(() => {
@@ -29,6 +29,7 @@ export default function Profile() {
           }));
           setOrders(temp);
         } catch (error) {
+          console.log("error inside useEffect");
           console.log(error);
         }
       }
@@ -45,6 +46,9 @@ export default function Profile() {
           <SigninFormv2 />
         </div>
       )}
+      {/* {user && !orders && <div>
+        <p>No Orders</p>
+        </div>} */}
       {user && (
         <ul>
           {orders && console.log(orders)}

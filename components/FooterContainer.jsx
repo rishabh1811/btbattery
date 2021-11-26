@@ -5,8 +5,8 @@ export default function FooterContainer() {
      <footer className="py-10 border-2 ">
          <div className="flex justify-center items-center gap-8">
              <p>Follow Us on  : </p>
-             <Link href="/"><a><img className="w-10" src="/images/whatsapp.png" alt="" /></a></Link> 
-             <Link href="/"><a><img className="w-10" src="/images/telegram.png" alt="" /></a></Link> 
+             <Link href="/"><a><img className="w-10" src="/images/whatsapp.webp" alt="whatsapp logo icon" /></a></Link> 
+             <Link href="/"><a><img className="w-10" src="/images/telegram.webp" alt="telegram logo icon" /></a></Link> 
              
         </div>
         <div className="quick-links flex flex-col pl-10 py-8 tablet:pl-14 laptop:pl-20">
