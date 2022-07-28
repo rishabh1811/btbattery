@@ -15,7 +15,7 @@
     "firebase": "^9.2.0",
     "framer-motion": "^4.1.17",
     "js-cookie": "^3.0.1",
-    "mongoose": "^6.0.12",
+    "mongoose": "^6.4.6",
     "next": "latest",
     "next-seo": "^4.28.1",
     "razorpay": "^2.0.7",
